@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Login User</h3>
+            </div>
+<form method="POST">
+    {% csrf_token %} 
+   
+      <div class="mb-3">
+        <label  class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Enter Email">
+      </div>
+   
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Enter Password">
+    </div>
+    <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Login</button> 
+  </form>
+</div>
+    </div>
+
+    {% for msg in messages %}
+            <h6> {{msg}} </h6>
+            {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

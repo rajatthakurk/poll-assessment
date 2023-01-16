@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">User Information</h3>
+            </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h6>First Name</H6>
+                <label>{{user.first_name}}</label>
+            </div>
+            <div class="col-md-6">
+                <H6>Last Name</H6>
+                <label>{{user.last_name}}</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h6>Email</H6>
+                <label>{{user.email}}</label>
+            </div>
+            <div class="col-md-6">
+                <H6>Mobile</H6>
+                <label>{{user.mobile}}</label>
+            </div>
+           
+        </div> 
+        <div class="row">
+            <div class="col-md-12">
+                <h6>Questions</H6>
+                <label>list of questions</label>
+                
+                <div><ol>
+                    {% for i in ud %}
+                    <li>{{i.question}}</li>
+                    {% endfor %}
+                    <ol></div>
+                
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
